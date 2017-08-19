@@ -88,3 +88,39 @@ function setUp(initLocations, locationList)
         // console.log(name);        
     }
 }
+
+function MarkersViewModel() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 11,
+        center: {lat: 40.7380527,
+            lng: -74.0034182}
+    });
+    this.data = [
+        {
+            name: "Gallow Green",
+            lat: 40.750746,
+            long: -74.0041608
+        },
+        {
+            name: "Two Hands",
+            lat: 40.7196957,
+            long: -73.9959867
+        },
+        {
+            name: "Maman",
+            lat: 40.7202789,
+            long: -73.99839039999999
+        },
+        {
+            name: "Bluestone Lane Collective Cafe",
+            lat: 40.7357916,
+            long: -74.0008931
+        },
+        {
+            name: "Grounded",
+            lat: 40.7380527,
+            long: -74.0034182
+        }
+    ];
+}
+
