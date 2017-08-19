@@ -124,3 +124,34 @@ function MarkersViewModel() {
     ];
 }
 
+function loadApp() {
+    var markersModel = new MarkersViewModel();
+    markersModel.locationList = ko.observableArray([]);
+    setUp(markersModel.data, markersModel.locationList);
+    markersModel.searchTerm = ko.observable("");
+    markersModel.filterList = ko.computed(function () {
+        var filter = markersModel.searchTerm().toLowerCase();
+        if (!filter) {
+            markersModel.locationList().forEach(function (locationItem) {
+                locationItem.visible(true);
+            });
+            return markersModel.locationList();
+        } else {
+
+            markersModel.locationList().forEach(function (item) {
+                var string = item.name.toLowerCase();
+                var result = (string.search(filter) >= 0);
+                item.visible(result);
+            });
+
+            return ko.utils.arrayFilter(markersModel.locationList(), function (item) {
+                var string = item.name.toLowerCase();
+                var result = (string.search(filter) >= 0);
+                item.visible(result);
+                return result;
+            });
+        }
+    });
+    ko.applyBindings(markersModel);
+}
+
