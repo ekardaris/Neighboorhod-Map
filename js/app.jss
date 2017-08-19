@@ -73,3 +73,18 @@ function addFoursquare(locationList, name, lat, long)
         alert("Error loading the Foursquare API call. Please try again.");
     });
 }
+
+function setUp(initLocations, locationList)
+{
+    clientID = "M13NERUVN043CZT5C0YAJRP3Q2WKDCHKDLBQR3FW21JNOFJU";
+    clientSecret = "JUGSL2QL2D2OR3CVWF1FZM0ATESJXJVII40UVDNFZBQ5UNPX";
+    for (var i = 0; i < initLocations.length; i++)
+    {
+        var foursquareURL = 'https://api.foursquare.com/v2/venues/search?ll=' + initLocations[i].lat + ',' + initLocations[i].long + '&client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20170801' + '&query=' + initLocations[i].name;
+        var name = initLocations[i].name;
+        var lat = initLocations[i].lat;
+        var long = initLocations[i].long;
+        addFoursquare(locationList, name, lat, long);
+        // console.log(name);        
+    }
+}
