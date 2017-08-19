@@ -155,3 +155,6 @@ function loadApp() {
     ko.applyBindings(markersModel);
 }
 
+function error() {
+    window.alert("Google Maps failed to load. Please try again.");
+}
