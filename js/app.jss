@@ -158,3 +158,7 @@ function loadApp() {
 function error() {
     window.alert("Google Maps failed to load. Please try again.");
 }
+
+/*
+TO DO: Commit to github
+*/
