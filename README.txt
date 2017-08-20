@@ -1,2 +1,2 @@
-Udacity Neighboorhod Map project.
-This project list some New York's google markers in a map. To view the application open the index.html in a browser.
+# Udacity Neighboorhod Map project.
+Built a single-page web application, using the Knockout framework, that displays a Google Map of an area and various points of interest. Users can search all included landmarks and, when selected, additional information about a landmark is presented from the FourSquare and Wikipedia APIs.
